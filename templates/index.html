@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Silica Gel Phase & Color Detector</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Silica Gel Phase Detector</h1>
+            <p>Upload a photo to detect gel type, current saturation phase, and color</p>
+        </header>
+
+        <!-- Upload Box -->
+        <div class="upload-card" id="dropzone">
+            <input type="file" id="file-input" accept="image/*" class="visually-hidden">
+            
+            <div class="upload-prompt" id="upload-prompt">
+                <div class="upload-icon">📷</div>
+                <p class="upload-main-text"><strong>Click to upload</strong> or drag and drop image here</p>
+                <p class="upload-sub-text">PNG, JPG, JPEG (or press Ctrl+V to paste)</p>
+            </div>
+
+            <div class="preview-box hidden" id="preview-box">
+                <img id="preview-img" src="" alt="Uploaded silica gel">
+                <button type="button" class="btn-clear" id="btn-clear" title="Upload new photo">✕ Change Photo</button>
+            </div>
+        </div>
+
+        <!-- Loading Spinner -->
+        <div class="loading-box hidden" id="loading-box">
+            <div class="spinner"></div>
+            <span>Analyzing photo...</span>
+        </div>
+
+        <!-- Output Box -->
+        <div class="result-card hidden" id="result-card">
+            <h2>Detection Result</h2>
+            
+            <div class="result-list">
+                <div class="result-item">
+                    <span class="label">Gel Type</span>
+                    <span class="value" id="val-gel-type">--</span>
+                </div>
+
+                <div class="result-item">
+                    <span class="label">Current Phase</span>
+                    <span class="value phase-badge" id="val-phase">--</span>
+                </div>
+
+                <div class="result-item">
+                    <span class="label">Current Colour</span>
+                    <div class="color-value-wrap">
+                        <span class="color-circle" id="val-color-circle"></span>
+                        <span class="value" id="val-color-name">--</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/js/app.js"></script>
+</body>
+</html>
